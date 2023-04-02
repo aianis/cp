@@ -35,7 +35,7 @@ If it is not, then we will increment the first pointer and set the element at th
 ############################################################################################################################################################################
 #Approach 1: Two Pointers
 ############################################################################################################################################################################
-
+"""
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         if len(nums) == 0:
@@ -53,14 +53,14 @@ class Solution:
                     nums[first_pointer] = nums[second_pointer]
                     second_pointer += 1
             return first_pointer + 1
-        
+    """    
 
 ############################################################################################################################################################################
 #Approach 2: Pythonic
 ############################################################################################################################################################################
 
 class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
+    def removeDuplicates(self, nums):
         if len(nums) == 0:
             return 0
         elif len(nums) == 1:
@@ -68,4 +68,10 @@ class Solution:
         else:
             nums[:] = sorted(set(nums))
             return len(nums)
+
+input_nums = [0,0,1,1,1,2,2,3,3,4]
+solution = Solution()
+unique_count = solution.removeDuplicates(input_nums)
+print(unique_count, input_nums)
+
 
